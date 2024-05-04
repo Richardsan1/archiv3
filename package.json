@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lighthouse-web3/sdk": "^0.3.2",
     "next": "14.2.3",
     "puppeteer": "^22.7.1",
     "react": "^18",

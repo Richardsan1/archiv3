@@ -16,7 +16,9 @@ export const GetPage = async (link: string) => {
         '-' +
         new Date().toISOString().replace(/:/g, '-') +
         '.html'
-    fs.writeFileSync(process.cwd() + '/archive/' + fileName, html)
+    const filePath = process.cwd() + '/archive/' + fileName
+    fs.writeFileSync(filePath, html)
 
     await browser.close()
+    return filePath
 }
