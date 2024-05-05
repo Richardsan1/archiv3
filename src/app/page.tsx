@@ -1,4 +1,3 @@
-import {WalletContextProvider, Wallet} from "@lumx-protocol/embedded-wallet" 
 import UploadForm from "@/components/UploadForm"
 export default function Home() {
 

@@ -2,7 +2,6 @@
 
 export default function UploadForm() {
     return (
-        // <WalletContextProvider>
         <form action="/api/archive" className="flex flex-col gap-1">
             <input
                 type="text"
