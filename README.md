@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Archiv3
 
-## Getting Started
+Essa é uma aplicação [Next.js](https://nextjs.org/)
 
-First, run the development server:
+## Pitch
+
+Em um mundo com uma quantidade de dados cada vez maior, muito se perde no caminho e a história digital é frequentemente perdida, seja por falta de responsabilidade dos criadores em arquivar aquele trabalho, ou seja, por censura governamental, o **Archiv3**, é a próxima geração de arquivamento da web que utiliza a tecnologia Web3 para preservar o patrimônio digital da humanidade.
+
+Imagine um mundo onde cada página da web, cada artigo, cada notícia podem ser imutáveis e preservados para sempre. Isso é possível com o **Archiv3**, onde a **transparência**, **confiança** e **longevidade** são os pilares com os quais nós construímos nosso serviço.
+
+Utilizando a tecnologia blockchain, cada arquivo é armazenado de forma segura e **transparente**. Cada transação, cada adição ao arquivo é registrada publicamente, permitindo que qualquer pessoa verifique a autenticidade e a integridade dos dados.
+
+Mas o que realmente nos diferencia é a nossa **descentralização**. Diferente de sistemas centralizados que podem ser sujeitos a censura ou perda de dados, o **Archiv3**, é imune a essas falhas por ter seus serviços de armazenamentos completamente hospedados de forma descentralizada na blockchain.
+
+Quando falamos sobre a **longevidade** dos arquivos, estamos falando sobre como eles são guardados para sempre usando a tecnologia da blockchain, o que significa que eles estão seguros e com a sua preservação garantida naturalmente por todo o ecossistema web3.
+
+Com o **Archiv3**, estamos não apenas preservando a história, mas também construindo o futuro. Um futuro onde a informação é livre, acessível e eterna.
+
+## Começando
+
+Para rodar o servidor, preencha a .env com os seguintes valores:
+
+Valores da Api da lumx:
+
+* API_KEY
+* PUBLIC_CLIENT_ID
+* CONTRACT_ID
+
+Chave da Api da Lighthouse:
+
+* API_KEY_LIGHTHOUSE
+
+Url da onde o servidor está sendo hospedado:
+
+* SERVER_URL
+
+E rode o server usando:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
