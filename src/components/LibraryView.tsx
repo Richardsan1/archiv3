@@ -1,5 +1,6 @@
 'use client'
 import { TFile } from '@/lib/utils'
+import { useMemo, useState } from 'react'
 
 export default function LibraryView({
     files,
@@ -8,10 +9,26 @@ export default function LibraryView({
     files: TFile[]
     baseLink: string
 }) {
+    const [search, setSearch] = useState('')
+    const filteredFiles = useMemo(() => {
+        return files.filter((file) =>
+            file.fileName.toLowerCase().includes(search.toLowerCase())
+        )
+    }, [files, search])
     return (
-        <div>
+        <div className="grid gap-2">
+            <div className="flex justify-center">
+                <input
+                    type="text"
+                    placeholder="Busque aqui..."
+                    className="rounded-md border border-gray-600 p-1 focus:border-black"
+                    onChange={(e) => {
+                        setSearch(e.target.value)
+                    }}
+                />
+            </div>
             <ul className="flex flex-col items-center gap-4">
-                {files.map((file) => (
+                {filteredFiles.map((file) => (
                     <li
                         key={file.id}
                         className="h-20 w-1/4 rounded-xl border border-black pb-4 text-center shadow-md shadow-black transition-all duration-200
