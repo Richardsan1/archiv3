@@ -1,7 +1,7 @@
 export default async function Library() {
     const baseLink = 'https://gateway.lighthouse.storage/ipfs/'
     const CIDs = (await (
-        await fetch('http://localhost:3000/api/library')
+        await fetch(`${process.env.SERVER_URL}/api/library`)
     ).json()) as {
         id: string
         cid: string

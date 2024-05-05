@@ -1,5 +1,6 @@
 import { GetPage, mint } from '@/lib/archive'
 import lighthouse from '@lighthouse-web3/sdk'
+import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { NextRequest } from 'next/server'
 
@@ -13,6 +14,7 @@ export async function GET(req: NextRequest) {
         console.log(response.data.Hash)
     })
 
-    mint({});
+    mint({})
+    revalidatePath(`${process.env.SERVER_URL}/api/library`)
     redirect('/')
 }
