@@ -1,4 +1,7 @@
+import {WalletContextProvider, Wallet} from "@lumx-protocol/embedded-wallet" 
+import UploadForm from "@/components/UploadForm"
 export default function Home() {
+
     return (
         <div className="flex h-full flex-col items-center justify-center gap-12 p-4 pb-64">
             <section>
@@ -11,20 +14,7 @@ export default function Home() {
                 </p>
             </section>
             <main className="flex justify-center">
-                <form action="/archive" className="flex flex-col gap-1">
-                    <input
-                        type="text"
-                        name="link"
-                        className="border border-black p-1"
-                        placeholder="Insira o link aqui"
-                    />
-                    <button
-                        className="rounded-lg border border-black bg-black p-1 text-white"
-                        type="submit"
-                    >
-                        Arquivar
-                    </button>
-                </form>
+                <UploadForm />
             </main>
         </div>
     )

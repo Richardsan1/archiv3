@@ -1,3 +1,4 @@
+import { BinaryToTextEncoding } from 'crypto'
 import fs from 'fs'
 import puppeteer from 'puppeteer'
 
@@ -21,4 +22,23 @@ export const GetPage = async (link: string) => {
 
     await browser.close()
     return filePath
+}
+// não sei o tipo de arquivo 
+// todo: descobrir o tipo de arquivo e alterar o tipo any
+export const mint = async (data: any) => {
+    const options = {
+        method: 'POST',
+        headers: {
+            Authorization: 'Bearer ' + process.env.API_KEY as string,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(
+            {
+                "contractId": process.env.CONTRACT_ID as string,
+                "walletId": process.env.PUBLIC_CLIENT_ID as string,
+                "quantity": 1,
+                "uriNumber": 0,
+            })
+    };
+    return await fetch('https://protocol-sandbox.lumx.io/v2/transactions/mints', options)
 }

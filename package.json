@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@lighthouse-web3/sdk": "^0.3.2",
+    "@lumx-protocol/embedded-wallet": "^0.0.25",
     "next": "14.2.3",
     "puppeteer": "^22.7.1",
     "react": "^18",

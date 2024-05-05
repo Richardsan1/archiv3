@@ -1,4 +1,4 @@
-import { GetPage } from '@/lib/archive'
+import { GetPage, mint } from '@/lib/archive'
 import lighthouse from '@lighthouse-web3/sdk'
 import { redirect } from 'next/navigation'
 import { NextRequest } from 'next/server'
@@ -8,5 +8,7 @@ export async function GET(req: NextRequest) {
     GetPage(link).then((file) => {
         lighthouse.upload(file, process.env.API_KEY_LIGHTHOUSE as string)
     })
+
+    mint({});
     redirect('/')
 }
