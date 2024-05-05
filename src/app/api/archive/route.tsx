@@ -11,10 +11,9 @@ export async function GET(req: NextRequest) {
             file,
             process.env.API_KEY_LIGHTHOUSE as string
         )
-        console.log(response.data.Hash)
+        mint(response.data.Hash)
     })
 
-    mint({})
     revalidatePath(`${process.env.SERVER_URL}/api/library`)
     redirect('/')
 }
