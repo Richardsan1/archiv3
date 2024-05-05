@@ -1,11 +1,9 @@
-"use client"
-
-import { WalletContextProvider } from "@lumx-protocol/embedded-wallet"
+'use client'
 
 export default function UploadForm() {
     return (
-            // <WalletContextProvider>
-        <form action="/archive" className="flex flex-col gap-1">
+        // <WalletContextProvider>
+        <form action="/api/archive" className="flex flex-col gap-1">
             <input
                 type="text"
                 name="link"
@@ -16,7 +14,7 @@ export default function UploadForm() {
             <button
                 className="rounded-lg border border-black bg-black p-1 text-white"
                 type="submit"
-                >
+            >
                 Arquivar
             </button>
         </form>
