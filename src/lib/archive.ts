@@ -23,9 +23,8 @@ export const GetPage = async (link: string) => {
     await browser.close()
     return filePath
 }
-// não sei o tipo de arquivo 
-// todo: descobrir o tipo de arquivo e alterar o tipo any
-export const mint = async (data: any) => {
+
+export const mint = async () => {
     const options = {
         method: 'POST',
         headers: {

@@ -1,7 +1,6 @@
-import {WalletContextProvider, Wallet} from "@lumx-protocol/embedded-wallet" 
 import UploadForm from "@/components/UploadForm"
-export default function Home() {
 
+export default function Home() {
     return (
         <div className="flex h-full flex-col items-center justify-center gap-12 p-4 pb-64">
             <section>
