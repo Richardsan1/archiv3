@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import WalletButton from './WalletButton'
 
 export default function Header() {
     return (
@@ -8,14 +9,17 @@ export default function Header() {
             </h1>
             <nav>
                 <ul className="flex gap-4">
-                    <li>
+                    <li className="flex items-center">
                         <Link href="/">Home</Link>
                     </li>
-                    <li>
+                    <li className="flex items-center">
                         <Link href="/about">Sobre</Link>
                     </li>
-                    <li>
+                    <li className="flex items-center">
                         <Link href="/library">Biblioteca</Link>
+                    </li>
+                    <li>
+                        <WalletButton />
                     </li>
                 </ul>
             </nav>
