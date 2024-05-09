@@ -1,4 +1,3 @@
-import { BinaryToTextEncoding } from 'crypto'
 import fs from 'fs'
 import puppeteer from 'puppeteer'
 
@@ -22,27 +21,5 @@ export const GetPage = async (link: string) => {
 
     await browser.close()
     return filePath
-}
-
-export const mint = async (data: string) => {
-    const options = {
-        method: 'POST',
-        headers: {
-            Authorization: 'Bearer ' + process.env.API_KEY as string,
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            "contractAddress":process.env.CUSTOM_CONTRACT_ID,
-            "walletId":process.env.PUBLIC_CLIENT_ID,
-            "operations":[
-                {
-                    "functionSignature":"mint(address, string)",
-                    "argumentsValues":[process.env.PUBLIC_CLIENT_ID, data]
-                }
-            ]
-        })
-    };
-      
-    return await fetch('https://protocol-sandbox.lumx.io/v2/transactions/custom', options)
 }
 

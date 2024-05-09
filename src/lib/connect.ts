@@ -12,9 +12,4 @@ export default async function connect() {
     }
 
     return signer;
-} 
-
-
-abi.map((a) => {
-    console.log(a)
-})
+}

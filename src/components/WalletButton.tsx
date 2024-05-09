@@ -1,9 +1,9 @@
 'use client'
-// import { useSDK, MetaMaskProvider } from "@metamask/sdk-react";
 import connect from '@/lib/connect'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
-import { JsonRpcSigner } from 'ethers'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import {signerAtom} from './SignerContext'
+import { useAtom } from 'jotai'
 declare global {
     interface Window {
         ethereum?: any
@@ -11,19 +11,32 @@ declare global {
 }
 
 export default function WalletButton() {
-    const [signer, setSigner] = useState<JsonRpcSigner | null>(null)
+    const [isSigned, setIsSigned] = useState(false)
+    const [signer, setSigner] = useAtom(signerAtom)
+    console.log({signer})
+    useEffect(() => {
+        if (window.ethereum) {
+            window.ethereum.on('accountsChanged', () => {
+                connect().then((res) => {
+                    setIsSigned(true)
+                    setSigner(() => res)
+                })
+            })
+        }
+    })
     return (
         <>
             <button
                 onClick={() =>
                     connect().then((res) => {
-                        setSigner(res)
+                        setSigner(() => res)
+                        setIsSigned(true)
                     })
                 }
                 className="flex items-center gap-2 rounded-lg border-2 border-black p-2"
             >
                 <AccountBalanceWalletIcon />
-                {signer == null ? 'Conectar Carteira' : 'Conectado'}
+                {isSigned ? 'Conectado': 'Conectar Carteira'}
             </button>
         </>
     )
